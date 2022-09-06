@@ -4,6 +4,8 @@ import org.mockito.Mockito;
 
 import java.time.Duration;
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,4 +64,10 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void finding_total_cost_of_the_items_selected(){
+        List<String> itemNames = Arrays.asList("Sweet corn soup","Vegetable lasagne");
+        assertEquals(388,restaurant.getTotalPriceOfOrder(itemNames));
+    }
 }
